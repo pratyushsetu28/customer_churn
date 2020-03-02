@@ -29,9 +29,9 @@ class RandomForestClassifier:
         return self.model.predict_proba(input_data)
 
     def postprocessing(self, input_data):
-        label = "No"
+        label = "Yes"
         if input_data[1] > 0.5:
-            label = "Yes"
+            label = "No"
         return {"probability": input_data[1], "label": label, "status": "OK"}
 
     def compute_prediction(self, input_data):

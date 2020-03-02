@@ -7,14 +7,14 @@ application = get_wsgi_application()
 # ML registry
 import inspect
 from apps.ml.registry import MLRegistry
-from apps.ml.income_classifier.random_forest import RandomForestClassifier
+from apps.ml.churn_classifier.random_forest import RandomForestClassifier
 
 try:
     registry = MLRegistry() # create ML registry
     # Random Forest classifier
     rf = RandomForestClassifier()
     # add to ML registry
-    registry.add_algorithm(endpoint_name="income_classifier",
+    registry.add_algorithm(endpoint_name="churn_classifier",
                             algorithm_object=rf,
                             algorithm_name="random forest",
                             algorithm_status="production",
